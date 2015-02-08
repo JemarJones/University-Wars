@@ -812,6 +812,11 @@ def controlsScreen():##Some really basic screen selection stuff
     optionChosen = False
     while not optionChosen :
         for even in event.get():
+            if even.type == QUIT\
+                or (even.type == KEYDOWN\
+                    and even.key == K_ESCAPE):
+                optionChosen = True
+                display.quit()
             if even.type == KEYUP:
                 if even.key == K_RIGHT:
                     selected += 1
@@ -841,6 +846,11 @@ def creditsScreen():##Some really basic screen selection stuff
     optionChosen = False
     while not optionChosen :
         for even in event.get():
+            if even.type == QUIT\
+                or (even.type == KEYDOWN\
+                    and even.key == K_ESCAPE):
+                optionChosen = True
+                display.quit()
             if even.type == KEYUP:
                 if even.key == K_RETURN:
                     startScreen()
@@ -861,6 +871,11 @@ def startScreen():##Some really basic screen selection stuff
     optionChosen = False
     while not optionChosen :
         for even in event.get():
+            if even.type == QUIT\
+                or (even.type == KEYDOWN\
+                    and even.key == K_ESCAPE):
+                optionChosen = True
+                display.quit()
             if even.type == KEYUP:
                 if even.key == K_DOWN:
                     selectionsLabels[selected] = Font.render(selections[selected], 1, (222,226,28))
@@ -903,6 +918,11 @@ def playerPicker():##Gets the user(s) to pick a number of players, and input nam
     picked = False
     while not picked:
         for even in event.get():
+            if even.type == QUIT\
+                or (even.type == KEYDOWN\
+                    and even.key == K_ESCAPE):
+                optionChosen = True
+                display.quit()
             if even.type == MOUSEBUTTONUP:                
                 numberOfPlayers = int(playerSelect.buttonClicked(mouse.get_pos()))
                 if numberOfPlayers != 0:
@@ -914,7 +934,6 @@ def playerPicker():##Gets the user(s) to pick a number of players, and input nam
 def main():
     init()##Initializing pygame
     startScreen()
-    #controlsScreen()
     setUp()##Setting up game
     gameLoop()##Starting game
     
