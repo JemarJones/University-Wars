@@ -8,4 +8,6 @@ An old civilization-like game i made in python/pygame.
 
 -Run University Wars.py 
 
+-At any point press the esc key to quit
+
 #And enjoy :)
